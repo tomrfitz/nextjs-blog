@@ -1,7 +1,6 @@
+import { Link } from "@chakra-ui/next-js";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import React from "react";
 import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
@@ -33,7 +32,13 @@ export default function Home({
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+              <Link
+                href={`/posts/${id}`}
+                color="blue.400"
+                _hover={{ color: "blue.500" }}
+              >
+                {title}
+              </Link>
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />

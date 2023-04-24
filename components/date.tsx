@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+import React from "react";
 
 export default function Date({ dateString }: { dateString: string }) {
   const date = parseISO(dateString);

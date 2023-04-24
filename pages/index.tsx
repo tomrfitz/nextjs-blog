@@ -1,10 +1,12 @@
 import { Link } from "@chakra-ui/next-js";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import pkg from "next/navigation.js";
 import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
 import utilStyles from "../styles/utils.module.css";
+const { useServerInsertedHTML } = pkg;
 
 export default function Home({
   allPostsData,
